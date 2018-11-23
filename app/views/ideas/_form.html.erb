@@ -1,13 +1,11 @@
-<%= form_with( model:[@topic, @topic.ideas.build] , local: true) do |form| %>
-<p>
-    <%= form.label :author %><br>
+<%= form_with( model:[@topic, @topic.ideas.build] , local: true, class: 'ui form') do |form| %>
+  <div class="field">
+    <%= form.label :author %>
     <%= form.text_field :author %>
-  </p>
-  <p>
-    <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+  </div>
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, placeholder: 'Idea description'%>
+  </div>
+  <%= form.submit class: 'ui positive button'%>
 <% end %>

@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui inverted menu">
+    
+      <div class="header item">
+        BrainstormApp
+      </div>
+
+      <%= link_to 'Topics', topics_path , class: 'item'%>
+      <%= link_to 'New', new_topic_path , class: 'item'%>
+
+      <div class="right menu">
+        <a class="item"> Sign up </a>
+        <a class="item"> Sign in </a>
+        <a class="item"> Sign out </a>
+      </div>
+      
+    </div>
+    
+    <div class="ui container">
+      <%= yield %>
+    </div>
+    
   </body>
 </html>

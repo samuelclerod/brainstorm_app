@@ -1,20 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @topic.author %>
-</p>
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  Topic
+</h4>
+<%= link_to 'Go back', topics_path, class: 'ui right floated button' %>
+<h3>"<%= @topic.description %>" by <%= @topic.author %></h3>
 
-<p>
-  <strong>Description:</strong>
-  <%= @topic.description %>
-</p>
 
-<h2>Ideas</h2>
-<%= render  @topic.ideas %>
+<h4 class="ui horizontal divider header">
+  <i class="lightbulb icon"></i>
+  Ideas
+</h4>
+<div class="ui comments"> <%= render  @topic.ideas %></div>
 
-<h2>Add an Idea</h2>
+<h4 class="ui horizontal divider header">
+  <i class="plus circle icon"></i>
+  Add an Idea
+</h4>
 <%= render  "ideas/form" %>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>

@@ -1,4 +1,4 @@
-<%= form_with(model: topic, local: true) do |form| %>
+<%= form_with(model: topic, local: true, class: 'ui form') do |form| %>
   <% if topic.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
@@ -21,7 +21,7 @@
     <%= form.text_area :description %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="ui attached buttons">
+    <%= form.submit class: 'ui positive button' %>
   </div>
 <% end %>

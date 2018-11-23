@@ -1,29 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Topics</h1>
+<div class="ui centered cards">
 
-<table>
-  <thead>
-    <tr>
-      <th>Author</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @topics.each do |topic| %>
+  <div class="card">
+    <div class="content">
+      <div class="header"><%= topic.author %></div>
+      <div class="description"><%= topic.description %></div>
+    </div>
+    <div class="ui bottom attached basic buttons">
+      <%= link_to 'Ideas', topic , class: 'ui button'%>
+      <%= link_to 'Edit', edit_topic_path(topic), class: 'ui button' %>
+      <%= link_to 'Destroy', topic, class: 'ui button',
+                                    method: :delete, 
+                                    data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
 
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <td><%= topic.author %></td>
-        <td><%= topic.description %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
 
-<br>
-
-<%= link_to 'New Topic', new_topic_path %>
