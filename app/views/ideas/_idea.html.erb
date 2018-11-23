@@ -1,0 +1,16 @@
+
+<p>
+  <strong>Author:</strong>
+  <%= idea.author %>
+</p>
+ 
+<p>
+  <strong>Idea:</strong>
+  <%= idea.description %>
+</p>
+ 
+<p>
+  <%= link_to 'Destroy Idea', [idea.topic, idea],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

@@ -1,0 +1,13 @@
+<%= form_with( model:[@topic, @topic.ideas.build] , local: true) do |form| %>
+<p>
+    <%= form.label :author %><br>
+    <%= form.text_field :author %>
+  </p>
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
