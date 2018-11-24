@@ -1,9 +1,5 @@
 <%= form_with( model:[@topic, @topic.ideas.build] , local: true, class: 'ui form') do |form| %>
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
-  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, placeholder: 'Idea description'%>
   </div>

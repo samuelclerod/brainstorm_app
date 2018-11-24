@@ -1,20 +1,20 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Topics</h1>
+<h1><i class="tags icon"></i>Topics</h1>
 <div class="ui centered cards">
 
 <% @topics.each do |topic| %>
   <div class="card">
     <div class="content">
-      <div class="header"><%= topic.author %></div>
+      <div class="header"><%= topic.username %></div>
       <div class="description"><%= topic.description %></div>
     </div>
     <div class="ui bottom attached basic buttons">
       <%= link_to 'Ideas', topic , class: 'ui button'%>
+      <%if current_user==topic.user %>
       <%= link_to 'Edit', edit_topic_path(topic), class: 'ui button' %>
       <%= link_to 'Destroy', topic, class: 'ui button',
                                     method: :delete, 
                                     data: { confirm: 'Are you sure?' } %>
+      <%end%>
     </div>
   </div>
 <% end %>

@@ -1,14 +1,17 @@
  <div class="comment">
     <div class="content">
-      <span class="author"><%= idea.author %></span>
+      <span class="author"><%= idea.username %></span>
       <div class="text">
         <%= idea.description %>
       </div>
+      <% if idea.user==current_user %>
       <div class="actions">
         <%= link_to 'Destroy Idea', [idea.topic, idea],
                class: 'reply',
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
       </div>
+      <% end %>
+      
     </div>
 </div>

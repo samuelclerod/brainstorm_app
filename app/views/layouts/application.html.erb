@@ -13,19 +13,29 @@
     <div class="ui inverted menu">
     
       <div class="header item">
-        BrainstormApp
+        <i class="lightbulb icon"></i>
+        brainstorm_app
       </div>
 
       <%= link_to 'Topics', topics_path , class: 'item'%>
-      <%= link_to 'New', new_topic_path , class: 'item'%>
 
+      <%if current_user%>
+      <%= link_to 'New', new_topic_path , class: 'item'%>
+      <%end%>
+      
       <div class="right menu">
-        <a class="item"> Sign up </a>
-        <a class="item"> Sign in </a>
-        <a class="item"> Sign out </a>
+      <% if current_user %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete , class: 'item' %>
+      <% else %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'item'%>
+        <%= link_to 'Sign in', new_user_session_path, class: 'item'%>
+      <% end %>
       </div>
       
     </div>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     
     <div class="ui container">
       <%= yield %>
