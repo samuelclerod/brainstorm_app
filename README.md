@@ -1,24 +1,5 @@
-# README
+# Brainstorm_App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was developed during the course of "Constuirndo um MVP com Rails" on the first e-week / campus-day at SEBRAE, in Juazeiro do Norte, by Samuel Rodrigues (samuelclerod.github.com).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For construction, we used the 5.2 rails with Semantic UI and Devise.
